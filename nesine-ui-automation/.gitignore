@@ -1,0 +1,32 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IDEs & Editors ###
+.idea/
+*.iws
+*.iml
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.springBeans
+.sts4-cache
+out/
+
+### Allure & Reports ###
+.allure/
+allure-results/
+allure-report/
+**/allure-results/
+**/allure-report/
+
+### OS & Temp Files ###
+.DS_Store
+Thumbs.db
+*.log
+**/*.log
+.antigravity/

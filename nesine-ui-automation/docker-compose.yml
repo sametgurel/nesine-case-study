@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nesine-ui-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nesine-ui-automation-runner
+    volumes:
+      - ./target:/app/target
+      - ./allure-results:/app/target/allure-results
+    environment:
+      - HEADLESS=true
+      - BROWSER=chrome
