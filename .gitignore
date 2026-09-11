@@ -1,0 +1,39 @@
+# Monorepo Root .gitignore
+
+### IDEs & Editors ###
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.settings/
+.classpath
+.project
+.factorypath
+.springBeans
+.recommenders
+.sts4-cache
+out/
+
+### Build Artifacts ###
+target/
+**/target/
+build/
+**/build/
+dist/
+**/dist/
+
+### Allure & Reporting ###
+.allure/
+**/.allure/
+allure-results/
+**/allure-results/
+allure-report/
+**/allure-report/
+
+### OS & Temporary Files ###
+.DS_Store
+Thumbs.db
+*.log
+**/*.log
+.antigravity/
