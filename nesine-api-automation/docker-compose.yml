@@ -1,0 +1,11 @@
+services:
+  nesine-api-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nesine-api-automation
+    volumes:
+      - ./target:/app/target
+    environment:
+      - env=prod
+    command: ["mvn", "clean", "test"]

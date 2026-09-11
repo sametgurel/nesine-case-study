@@ -1,0 +1,158 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "PopularCouponsResponseSchema",
+  "type": "object",
+  "required": ["sc", "d"],
+  "properties": {
+    "sc": {
+      "type": "integer",
+      "description": "Status code returned in response body"
+    },
+    "el": {
+      "type": ["array", "null"],
+      "description": "Error list, null on successful responses",
+      "items": {
+        "type": "object",
+        "required": ["c", "m"],
+        "properties": {
+          "c": { "type": "integer" },
+          "m": { "type": "string" }
+        }
+      }
+    },
+    "ml": {
+      "type": ["string", "object", "array", "null"],
+      "description": "Message list or details"
+    },
+    "d": {
+      "type": "array",
+      "description": "List of popular coupons",
+      "items": {
+        "type": "object",
+        "required": [
+          "couponHash",
+          "events",
+          "eventCount",
+          "orderIndex",
+          "totalOdd",
+          "couponId"
+        ],
+        "properties": {
+          "couponHash": {
+            "type": "string",
+            "minLength": 1
+          },
+          "eventCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "orderIndex": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "totalOdd": {
+            "type": "string"
+          },
+          "couponId": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          },
+          "count1H": {
+            "type": "integer"
+          },
+          "count24H": {
+            "type": "integer"
+          },
+          "isWon": {
+            "type": "boolean"
+          },
+          "isIncludeUvEvent": {
+            "type": "boolean"
+          },
+          "sharing": {
+            "type": ["object", "null"],
+            "properties": {
+              "profileImageUri": { "type": ["string", "null"] },
+              "username": { "type": ["string", "null"] },
+              "cupLevel": { "type": ["integer", "null"] },
+              "encryptedMemberId": { "type": ["string", "null"] },
+              "feedId": { "type": ["string", "null"] },
+              "sharingDate": { "type": ["string", "null"] },
+              "sharingDateEpoch": { "type": ["integer", "null"] }
+            }
+          },
+          "events": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "betradarId",
+                "minOdd",
+                "maxOdd",
+                "type",
+                "sportId",
+                "code",
+                "name",
+                "outcomes"
+              ],
+              "properties": {
+                "betradarId": {
+                  "type": "integer"
+                },
+                "minOdd": {
+                  "type": "number",
+                  "minimum": 1.0
+                },
+                "maxOdd": {
+                  "type": "number",
+                  "minimum": 1.0
+                },
+                "type": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sportId": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "code": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "isActive": {
+                  "type": "boolean"
+                },
+                "marketId": {
+                  "type": "integer"
+                },
+                "marketName": {
+                  "type": "string"
+                },
+                "outcomes": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "required": ["id", "name", "odd"],
+                    "properties": {
+                      "id": { "type": "string" },
+                      "name": { "type": "string" },
+                      "mbs": { "type": ["string", "null"] },
+                      "odd": { "type": "string" },
+                      "status": { "type": ["string", "null"] }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
